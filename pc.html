@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Cn">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/png" href="img/favicon.ico" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://static.mobage.cn/html/public/fwg/favicon.ico">
+	<link rel="icon" type="image/png" href="http://static.mobage.cn/html/public/fwg/favicon.ico">
+	<title>《为谁而炼金》1周年庆典</title>
+	<style>
+		img{
+			width: 150px;
+			height: 150px;
+			position: absolute;
+			left: 50%;
+			top:50%;
+			margin-left: -75px;
+			margin-top: -75px;
+		}
+		body,html{
+			margin: 0;
+			padding: 0;
+		}
+		p{	
+			width: 180px;
+			height: 40px;
+			line-height: 40px;
+			font-size:14px;
+			position: absolute;
+			left: 50%;
+			top:50%;
+			margin-left: -90px;
+			margin-top: 75px;
+			font-family:"Microsoft YaHei";
+			text-align: center;
+		}
+	</style>
+
+	<script>
+        //只允许在微信浏览器打开
+        var ua = navigator.userAgent.toLowerCase();
+        var isWeixin = ua.indexOf('micromessenger') != -1;
+        // 判断是否是PC端地址
+        var isPC=window.location.href.indexOf("http://h5.mobage.cn/fwg/happy1st/pc.html") != -1;
+        if(isPC&&isWeixin){
+        	// 在微信里打开PC地址的，跳转到微信
+        	 window.location.href = 'http://h5.mobage.cn/fwg/happy1st/index.html';
+        }
+        // else if(!isPC&&!isWeixin){        
+        // 	window.location.href = './pc.html';
+        // }
+        else{	
+        }        	
+	</script>
+</head>
+<body>
+
+	<div>
+		<img src="http://h5-cdn.mobage.cn/fwg/static/H5/image/qr.jpg" alt="" >
+
+	</div>	
+	<p>请使用微信扫描二维码登录</p>
+<script src="http://static.mobage.cn/html/common/js/denaplatform.js?pid=79e3b391fe93213623a9413588863629"></script>	
+</body>
+</html>

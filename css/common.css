@@ -1,0 +1,1009 @@
+div,img,a{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;}
+ul,li{list-style:none;border:none;} 
+#getgift>ul{width: 19vw;
+    top: 45vw;
+    left: 63.5vw;
+    position: absolute;
+    text-align: center;
+    line-height: 7vw;
+}
+
+#getgift li{
+    width:100%;
+    height:7vw;
+    position:absolute; 
+    text-align:center; 
+    line-height:7vw;
+}
+
+#copyBtnA{    
+    top: 0vw;    
+}
+#copyBtnB{  
+    top: 13.5vw; 
+}
+#copyBtnC{   
+    top: 27.5vw;  
+}
+#copyBtnD{
+    top: 41.5vw;    
+}
+#copyBtnE{
+    top: 55vw;    
+}
+#copyBtnF{
+    top: 69vw;     
+}
+#copyBtnG{  
+    top: 83vw;    
+}
+
+/*横屏幕*/
+.orientation{width:100%;height:100%;overflow:hidden;background-color: :#000;position: absolute;z-index:999;}
+.orientation>img{position: absolute;width:30%;height:auto;top:0;left:0;bottom: 0;right:0;  margin: auto;}
+/*指定输出设备中的页面可见区域高度大于或等于宽度*/
+@media screen and (orientation: portrait) {
+  .orientation{display: none}
+}
+/*除portrait值情况外，都是landscape*/
+@media screen and (orientation: landscape) {
+   .orientation{display: block}
+}
+.hide{display: none!important}
+.loading{display: none;}
+
+
+        *{
+            margin: 0;
+            padding: 0;
+            vertical-align: bottom;
+            
+        }
+        
+        body,html{
+            background-color: black;
+            /*解决屏幕中间出现黑屏*/
+            height: 100%;  
+        }
+		input{
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style:none;
+            background: none;
+        }
+        /*解决屏幕中间出现黑屏，因为该插件的高度为整个body的高度，所以需要写该代码*/
+        .swiper-container{
+            height: 100%;
+            /*display: none;*/
+        }
+        #firstscreen{
+            background-image: url('http://h5-cdn.mobage.cn/fwg/static/H5/image/top.jpg');
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size: auto 100%;
+
+        }
+        /*.top{
+            width:100%;
+        }*/
+        .bq{
+            position:absolute;
+            right:3vw;
+            top:3vw;
+            width:20%;
+        }
+        .beforelogin{
+            position:absolute; 
+            width:60vw; 
+            left: 20vw; 
+            /*top:119vw;*/
+            bottom: 24vw;
+        }
+        .button{
+            position:absolute; 
+            width:40vw; 
+            left:30vw; 
+            /*top:128vw;*/
+            bottom: 8.5vw;
+        }
+        .logoff{
+            position:absolute; 
+            width:60vw; 
+            left:20vw; 
+            bottom: 26vw;
+            display: none;
+        }
+        .memory{
+            position:absolute; 
+            /*top:137vw; */
+            width:80vw; 
+            left:10vw; 
+            display:none;
+            bottom: 9.5vw;
+        }
+        #lognin{
+            width: 40vw;
+            position: absolute;
+            left: 30vw;
+            height: 13vw; 
+            /*top:137vw; */
+            cursor:pointer;
+             bottom: 9.5vw;
+        }
+        #prize{
+            width:40vw; 
+            /*top:121vw; */
+            left:10vw; 
+            position:absolute;
+            height:12.5vw; 
+            display:none;
+            bottom: 9.5vw;
+        }
+        #memory{
+            width:40vw; 
+            /*top:137vw; */
+            left:50.5vw; 
+            position:absolute; 
+            height:12.5vw; 
+            display:none;
+            bottom: 9.5vw;
+        }
+        #username{
+            width:42vw; 
+            bottom: 26vw;
+            /*top:128vw; */
+            height:5vw; 
+            left:24vw; 
+            position:absolute; 
+            text-align:center; 
+            font-size: 12px;
+        }
+        #withdraw{
+            width: 10vw; 
+            /*top: 128vw; */
+            left: 66vw; 
+            height: 5vw; 
+            bottom: 26vw;
+            position:absolute;
+        }
+        .rules{
+            width: 20vw;
+            position: absolute;
+            left: 40vw;
+            height: 5vw; 
+            /*top:153vw;*/
+            bottom: 3vw;
+            cursor:pointer;
+        }
+        #secondscreen{
+            background-image: url('http://h5-cdn.mobage.cn/fwg/static/H5/image/second_03.jpg');
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size: auto 100%;
+        }
+        /*.second{
+            width:100%
+        }*/
+        .gotprize{
+            position:absolute; 
+            /*top:137vw; */
+            width:80vw; 
+            left:10vw;
+            bottom: 11vw; 
+        }
+        .get{
+            position:absolute; 
+            /*top:137vw;  */
+            width:40vw; 
+            left:10vw; 
+            z-index: 1; 
+            bottom: 11vw;
+            display: none;
+        }
+        #getprize{
+            width:40vw; 
+            position:absolute; 
+            /*top:137vw; */
+            left:10vw; 
+            cursor:pointer;
+            height: 13vw;
+            bottom: 11vw;
+
+        }
+        #backdiv{
+            width:40vw; 
+            position:absolute; 
+            /*top:137vw; */
+            left:51vw; 
+            height:13vw;
+            bottom: 11vw;
+        }
+        .rules.two{
+            width:20vw; 
+            position:absolute; 
+            height:5vw; 
+            /*top:153vw; */
+            bottom: 2.5vw;
+            cursor:pointer; 
+            left:28vw;
+            
+        }
+        #myprize{
+            width:20vw; 
+            position:absolute; 
+            height:5vw; 
+            /*top:153vw; */
+            cursor:pointer; 
+            left:51vw;
+            bottom: 2.5vw;
+            
+        }
+        #login{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute;  
+            top:0; 
+            opacity:0.9;  
+            z-index:1; 
+            display:none;
+        }
+        .logn{
+            width:80vw; 
+            top:41vw; 
+            position:absolute;
+            left:10vw;
+        }
+        .logincacel{
+            width: 5vw;
+            height: 5vw;
+            position: absolute;
+            left: 84vw; 
+            top: 47vw;
+        }
+        .mobile{
+            width: 37vw; 
+            height: 6vw;
+            top: 66vw;
+            left: 37vw;
+            position:absolute;
+        }
+        .verifycode{
+            width: 18vw; 
+            height: 6vw;
+            top: 74.5vw;
+            left: 37vw;
+            position:absolute;
+        }
+        .got{
+            font-size: 8px;
+            text-align: center;
+            color:white;
+            line-height: 6.5vw;
+            width:19vw; 
+            height:6.5vw; 
+            top:74.5vw; 
+            left:56vw; 
+            position:absolute;
+            /*background-color: red;*/
+           
+        }
+        .ensure{
+            width:36vw; 
+            height:11vw; 
+            top:84vw; 
+            left:32vw; 
+            position:absolute;
+        }
+        #gift{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .logn{
+            width:80vw; 
+            top:41vw; 
+            position:absolute; 
+            left:10vw;
+        }
+        .giftcacel{
+            width: 5vw;
+            height: 5vw;
+            position: absolute;
+            left: 84vw; 
+            top: 47vw;
+        }
+        .giftnumber{
+            width:38vw; 
+            height:7vw; 
+            top:70vw; 
+            left:37vw; 
+            position:absolute;
+            line-height: 7vw;
+        }
+        #rule{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .activityrules{
+            width:80vw; 
+            position:absolute; 
+            left:10vw; 
+            top:22vw;
+        }
+        .rulecacel{
+            width:5vw; 
+            height:5vw; 
+            position:absolute; 
+            left:84vw; 
+            top:28vw;
+        }
+        #getgift{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+            font-size: 10px;
+        }
+        .take{
+           width:80vw; 
+           position:absolute; 
+           left:10vw; 
+           top:18.5vw; 
+        }
+        #getgiftcacel{
+            width:5vw; 
+            height:5vw; 
+            position:absolute; 
+            left:84vw; 
+            top:24vw;
+        }
+        #codeone{
+            width: 37vw; 
+            height: 7vw;
+            top: 45vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codetwo{
+            width: 37vw; 
+            height: 7vw;
+            top: 58.5vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codethree{
+            width: 37vw; 
+            height: 7vw;
+            top: 72.5vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center;
+            line-height:7vw;
+        }
+        #codefour{
+            width: 37vw; 
+            height: 7vw;
+            top: 86.5vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codefive{
+            width: 37vw; 
+            height: 7vw;
+            top: 100vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codesix{
+            width: 37vw; 
+            height: 7vw;
+            top: 114vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codeseven{
+            width: 37vw; 
+            height: 7vw;
+            top: 128vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #reward{
+            width:100vw; 
+            height:100%; 
+            background-color:#202020; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .finallyphoto{
+            width:80vw; 
+            position:absolute; 
+            left:10vw; 
+            top:54vw;
+        }
+        .closephoto{
+            width:5vw; 
+            height:5vw; 
+            position:absolute; 
+            left:83.5vw; 
+            top:60vw;
+        }
+        .look{
+            position:absolute;
+            width: 36vw;
+            height: 11vw;
+            left: 32vw; 
+            top: 84vw;
+        }
+        .remember{
+            display: none;
+            background-image: url('http://h5-cdn.mobage.cn/fwg/static/H5/image/end.jpg');
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size: auto 100%;
+            height: 100%;
+        }
+       /* .end{
+            width:100vw;
+        }*/
+        .shandogn{
+            position:absolute; 
+            width:15vw; 
+            bottom:12vw; 
+            left:42vw; 
+            animation: blink 2s infinite;
+        }
+        @keyframes blink{
+                0%{
+                     opacity: 0;
+                  }
+                50%{
+                    opacity: 100;
+                }
+                100%{
+                    opacity: 0;
+                }
+        }
+        .frame{
+            width: 85vw;
+            height: 65vw;
+            top: 59.5vw;
+            left: 7.5vw; 
+            position:absolute; 
+            overflow:auto;
+        }
+        .overflow{
+            width:85vw;
+        }
+        .back{
+            width: 40vw; 
+            height: 13vw;
+            bottom: -262vw;
+            left: 23vw; 
+            position:absolute;
+            /*background-color: yellow;*/
+        }
+        /*版权所属信息*/
+        /*.footer {
+           position: absolute;
+            top: 1234vw;
+            z-index: 99;
+            margin-bottom: 6vw;
+        }
+        .footer a {
+          position: static;
+          text-decoration: none;
+        }
+        .footer > img {
+          display: block;
+          width: 100%;
+
+        }*/
+/*iphonex的适配*/
+        @media screen and (max-aspect-ratio: 749/1334){
+            div,img,a{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;}    
+        *{
+            margin: 0;
+            padding: 0;
+            vertical-align: bottom;
+            
+        }
+        
+        body,html{
+            background-color: black;
+            /*解决屏幕中间出现黑屏*/
+            height: 100%;  
+        }
+        input{
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style:none;
+        }
+        /*解决屏幕中间出现黑屏，因为该插件的高度为整个body的高度，所以需要写该代码*/
+        .swiper-container{
+            height: 100%;
+            /*display: none;*/
+        }
+        #firstscreen{
+            background-image: url('http://h5-cdn.mobage.cn/fwg/static/H5/image/top2.jpg');
+            background-repeat:no-repeat;
+            background-position:top center;
+            background-size: 100% auto;
+
+        }
+        /*.top{
+            width:105%;
+            margin-left:-2.5%;
+        }*/
+        .bq{
+            position:absolute;
+            right:3vw;
+            top:3vw;
+            width:20%;
+        }
+        .beforelogin{
+            position:absolute; 
+            width:60vw; 
+            left: 20vw; 
+            top:137vw;
+            /*background-color: red;*/
+        }
+        .button{
+            position:absolute; 
+            width:40vw; 
+            left:30vw; 
+            top:145vw;
+            /*background-color: red;   */
+
+        }
+        .logoff{
+            position:absolute; 
+            width:60vw; 
+            left:20vw; 
+            display: none;
+            bottom: 52vw;
+            top:137vw;
+            /*background-color: red;*/
+
+
+        }
+        .memory{
+            position:absolute; 
+            width:80vw; 
+            left:10vw; 
+            display:none;
+            top:145vw;
+            /*background-color: red;*/
+            
+        }  
+        #lognin{
+           width: 40vw;
+            position: absolute;
+            left: 30vw;
+            height: 13vw; 
+            top:145vw;
+            cursor:pointer;
+        }
+        #prize{
+            width:40vw; 
+            left:10vw; 
+            position:absolute;
+            height:12.5vw; 
+            display:none;
+            top:145vw;
+        }
+        #memory{
+            width:40vw;
+            display: none; 
+            left:50.5vw; 
+            position:absolute; 
+            height:12.5vw;
+            top:145vw;
+            
+        }
+        #username{
+            width:42vw; 
+            top:137vw; 
+            height:5vw; 
+            left:24vw; 
+            position:absolute; 
+            text-align:center; 
+            font-size: 12px;
+            
+        }
+        #withdraw{
+            width: 10vw; 
+            top: 137vw; 
+            left: 66vw; 
+            height: 5vw; 
+            position:absolute;
+          
+            
+        }
+        .rules{
+            width: 20vw;
+            position: absolute;
+            left: 40vw;
+            height: 5vw; 
+            top:165vw;
+            cursor:pointer;
+            /*background-color: red;*/
+            
+        }
+       /* .second{
+            width:105%;
+            margin-left:-2.5%;
+        }*/
+         #secondscreen{
+            background-image: url('http://h5-cdn.mobage.cn/fwg/static/H5/image/second.jpg');
+            background-repeat:no-repeat;
+            background-position: top center;
+            background-size: 100% auto;
+        }
+        .gotprize{
+            position:absolute; 
+            top:145vw; 
+            width:80vw; 
+            left:10vw; 
+        }
+        .get{
+           position:absolute; 
+            top:145vw;  
+            width:40vw; 
+            left:10vw; 
+            z-index: 1; 
+            display: none; 
+        }
+        #getprize{
+            width:40vw; 
+            position:absolute; 
+            top:145vw; 
+            left:10vw; 
+            cursor:pointer;
+            height: 13vw;
+        }
+        #backdiv{
+            width:40vw; 
+            position:absolute; 
+            top:145vw; 
+            left:51vw; 
+            height:13vw;
+        }
+        .rules.two{
+            width:20vw; 
+            position:absolute; 
+            height:5vw; 
+            top:165vw; 
+            cursor:pointer; 
+            left:28vw;
+        }
+        #myprize{
+            width:20vw; 
+            position:absolute; 
+            height:5vw; 
+            top:165vw; 
+            cursor:pointer; 
+            left:51vw;
+            /*background-color: red;*/
+        }
+        #login{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute;  
+            top:0; 
+            opacity:0.9;  
+            z-index:1; 
+            display:none;
+        }
+        .logn{
+            width:80vw; 
+            top:41vw; 
+            position:absolute;
+            left:10vw;
+        }
+        .logincacel{
+             width: 5vw;
+            height: 5vw;
+            position: absolute;
+            left: 84vw; 
+            top: 47vw;
+        }
+        .mobile{
+            width: 37vw; 
+            height: 6vw;
+            top: 66vw;
+            left: 37vw;
+            position:absolute;
+        }
+        .verifycode{
+            width: 18vw; 
+            height: 6vw;
+            top: 74.5vw;
+            left: 37vw;
+            position:absolute;
+        }
+        .got{
+            font-size: 10px;
+            text-align: center;
+            color:white;
+            line-height: 6.5vw;
+            width:19vw; 
+            height:6.5vw; 
+            top:74.5vw; 
+            left:56vw; 
+            position:absolute;
+        }
+        .ensure{
+            width:36vw; 
+            height:11vw; 
+            top:84vw; 
+            left:32vw; 
+            position:absolute;
+        }
+         #gift{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .logn{
+            width:80vw; 
+            top:41vw; 
+            position:absolute; 
+            left:10vw;
+        }
+        .giftcacel{
+            width: 5vw;
+            height: 5vw;
+            position: absolute;
+            left: 84vw; 
+            top: 47vw;
+        }
+        .giftnumber{
+            width:38vw; 
+            height:7vw; 
+            top:70vw; 
+            left:37vw; 
+            position:absolute;
+            font-size: 10px;
+        }
+        #rule{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .activityrules{
+            width:80vw; 
+            position:absolute; 
+            left:10vw; 
+            top:22vw;
+        }
+        .rulecacel{
+            width:5vw; 
+            height:5vw; 
+            position:absolute; 
+            left:84vw; 
+            top:28vw;
+        }
+        #getgift{
+            background-color:#202020; 
+            width:100vw; 
+            height:100%; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .take{
+           width:80vw; 
+           position:absolute; 
+           left:10vw; 
+           top:18.5vw; 
+        }
+        #getgiftcacel{
+            width:5vw; 
+            height:5vw; 
+            position:absolute; 
+            left:84vw; 
+            top:24vw;
+        }
+        #codeone{
+            width: 37vw; 
+            height: 7vw;
+            top: 45vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codetwo{
+            width: 37vw; 
+            height: 7vw;
+            top: 58.5vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codethree{
+            width: 37vw; 
+            height: 7vw;
+            top: 72.5vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center;
+            line-height:7vw;
+        }
+        #codefour{
+            width: 37vw; 
+            height: 7vw;
+            top: 86.5vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codefive{
+            width: 37vw; 
+            height: 7vw;
+            top: 100vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codesix{
+            width: 37vw; 
+            height: 7vw;
+            top: 114vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #codeseven{
+            width: 37vw; 
+            height: 7vw;
+            top: 128vw; 
+            left: 27.5vw; 
+            position:absolute; 
+            text-align:center; 
+            line-height:7vw;
+        }
+        #reward{
+            width:100vw; 
+            height:100%; 
+            background-color:#202020; 
+            position:absolute; 
+            top:0; 
+            opacity:0.9; 
+            z-index:1; 
+            display:none;
+        }
+        .finallyphoto{
+            width:80vw; 
+            position:absolute; 
+            left:10vw; 
+            top:54vw;
+        }
+        .closephoto{
+            width:5vw; 
+            height:5vw; 
+            position:absolute; 
+            left:83.5vw; 
+            top:60vw;
+        }
+        .look{
+            position:absolute;
+            width: 36vw;
+            height: 11vw;
+            left: 32vw; 
+            top: 84vw;
+        }
+        .remember{
+            display: none;
+            background-image: url('http://h5-cdn.mobage.cn/fwg/static/H5/image/end_01.jpg');
+            background-repeat:no-repeat;
+            background-position:top center;
+            background-size: 100% auto;
+            height: 100%;
+        }
+       /* .end{
+            width:105%;
+            margin-left: -2.5%;
+        }*/
+        
+        .shandogn{
+            position:absolute; 
+            width:15vw; 
+            top:148vw; 
+            left:42vw; 
+            animation: blink 2s infinite;
+        }
+        @keyframes blink{
+                0%{
+                     opacity: 0;
+                  }
+                50%{
+                    opacity: 100;
+                }
+                100%{
+                    opacity: 0;
+                }
+        }
+        .frame{
+            width: 85vw;
+            height: 71vw;
+            top: 74vw;
+            left: 7.5vw; 
+            position:absolute; 
+            overflow:auto;
+        }
+        .overflow{
+            width:85vw;
+        }
+        .back{
+            width: 40vw; 
+            height: 13vw;
+            top:314vw;
+            left: 23vw;
+            position:absolute;
+        }
+        
+        
+        }
+
+        /*footer*/
+
+      .jk {
+          color: #5F5E5E;
+        }
+        .jk p {
+          font-size: 10px;
+          line-height: 14px;
+        }
+        .img-bg{width:100%;}
